@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-primary-dark: #11161B;
+  --color-primaryDark: #11161B;
+  --color-accent-blue: #0077D3;
+  --color-accentBlue: #0077D3;
+  --color-neutral-light: #F8FAFC;
+  --color-neutralLight: #F8FAFC;
+  --color-clean-white: #FFFFFF;
+  --color-cleanWhite: #FFFFFF;
+  --color-muted-gray: #64748B;
+  --color-mutedGray: #64748B;
+
+  --font-sans: "Inter", "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-display: "Plus Jakarta Sans", "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  /* Custom Animations library */
+  --animate-reveal: reveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Configure class-first dark mode variant for Tailwind CSS v4 */
+@variant dark (&:where(.dark, .dark *));
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    background-color: var(--color-neutralLight);
+    color: var(--color-primaryDark);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  }
+
+  html.dark body {
+    background-color: #0F172A;
+    color: #F1F5F9;
+  }
+
+  ::selection {
+    background-color: rgba(0, 119, 211, 0.15);
+    color: var(--color-primaryDark);
+  }
+
+  html.dark ::selection {
+    background-color: rgba(0, 119, 211, 0.3);
+    color: #F1F5F9;
+  }
+
+  /* Custom high-quality scrollbars */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--color-neutralLight);
+    transition: background-color 0.3s ease;
+  }
+
+  html.dark ::-webkit-scrollbar-track {
+    background: #0F172A;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-mutedGray);
+    border: 3px solid var(--color-neutralLight);
+    border-radius: 9999px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+  }
+
+  html.dark ::-webkit-scrollbar-thumb {
+    background: #334155;
+    border: 3px solid #0F172A;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-accentBlue);
+  }
+}
