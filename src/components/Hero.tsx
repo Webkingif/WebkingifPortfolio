@@ -82,7 +82,7 @@ export default function Hero() {
                 </button>
                 <a
                   id="hero-cta-download-resume"
-                  href="/resume.pdf"
+                  href="https://webkingif.github.io/webkingifportfolioasset/files/resume.pdf"
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-cleanWhite dark:bg-slate-800 border border-gray-200 dark:border-slate-700 hover:border-accentBlue/30 dark:hover:border-accentBlue/40 hover:bg-neutralLight dark:hover:bg-slate-700/80 text-primaryDark dark:text-cleanWhite px-7 py-3.5 rounded-xl font-sans font-semibold text-base transition-all focus:ring-2 focus:ring-accentBlue/20"
                   download
                 >

@@ -3,6 +3,7 @@ import { ExternalLink, Github, Monitor, Smartphone, Database, Lock, Globe, Spark
 import Reveal from "./Reveal";
 
 export interface Project {
+  idno: number;
   id: string;
   title: string;
   description: string;
@@ -14,7 +15,18 @@ export interface Project {
   featured: boolean;
 }
 
-const PROJECTS_DATA: Project[] = [
+async function getProjects(): Promise<Project[]> {
+  const response = await fetch(
+    "https://webkingif.github.io/WebkingifPortfolioAsset/data/projects.json"
+  );
+
+  const data: Project[] = await response.json();
+
+  return data;
+}
+const PROJECTS_DATA = await getProjects();
+
+const PROJECTS_DATA2 = [
   {
     id: "Coffee website",
     title: "Coffee sales website",
