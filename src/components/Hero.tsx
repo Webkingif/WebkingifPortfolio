@@ -89,6 +89,15 @@ export default function Hero() {
                   <Download className="h-4 w-4" />
                   Download Resume
                 </a>
+                <a
+                  href="https://wa.me/2348085604124"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="cursor-pointer w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 "
+                >
+                  <img src="/chatonwhatsapp.png" alt="contact us on whatsapp" />
+                </a>
+
               </div>
 
               {/* Horizontal row showcasing core technologies */}
