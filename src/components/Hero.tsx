@@ -61,7 +61,7 @@ export default function Hero() {
               <h1 className="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-primaryDark dark:text-cleanWhite leading-[1.1]">
                 Crafting High-Performance <span className="text-accentBlue relative">
                   User Interfaces
-                  <span className="absolute bottom-1 left-0 w-full h-[6px] bg-accentBlue/10 -z-10 rounded-full"></span>
+                  <span className="absolute bottom-1 left-0 w-full h-1.5 bg-accentBlue/10 -z-10 rounded-full"></span>
                 </span>
               </h1>
 
@@ -82,20 +82,12 @@ export default function Hero() {
                 </button>
                 <a
                   id="hero-cta-download-resume"
-                  href="https://webkingif.github.io/webkingifportfolioasset/files/resume.pdf"
+                  href="https://webkingif.github.io/WebkingifPortfolioAsset/files/resume.pdf"
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-cleanWhite dark:bg-slate-800 border border-gray-200 dark:border-slate-700 hover:border-accentBlue/30 dark:hover:border-accentBlue/40 hover:bg-neutralLight dark:hover:bg-slate-700/80 text-primaryDark dark:text-cleanWhite px-7 py-3.5 rounded-xl font-sans font-semibold text-base transition-all focus:ring-2 focus:ring-accentBlue/20"
                   download
                 >
                   <Download className="h-4 w-4" />
                   Download Resume
-                </a>
-                <a
-                  href="https://wa.me/2348085604124"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="cursor-pointer w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 "
-                >
-                  <img src="/chatonwhatsapp.png" alt="contact us on whatsapp" />
                 </a>
 
               </div>
@@ -154,7 +146,7 @@ export default function Hero() {
                 </div>
 
                 {/* Card sidebar panel mockup & Active editor */}
-                <div className="flex min-h-[300px]">
+                <div className="flex min-h-75">
                   {/* Visual directory tree view (collapsed) */}
                   <div className="hidden sm:flex flex-col gap-2.5 bg-[#090C0F] w-12 border-r border-gray-850 py-4 items-center text-gray-650">
                     <Code className="h-4 w-4 text-accentBlue" />

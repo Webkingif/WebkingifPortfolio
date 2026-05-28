@@ -189,6 +189,17 @@ export default function Contact() {
                         </a>
                       );
                     })}
+
+                  </div>
+                  <div>
+                    <a
+                      href="https://wa.me/2348085604124"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="cursor-pointer w-full sm:w-auto inline-flex items-center justify-center gap-2 py-3.5  "
+                    >
+                      <img src="/chatonwhatsapp.png" alt="contact us on whatsapp" className="max-w-44" />
+                    </a>
                   </div>
                 </div>
               </div>
