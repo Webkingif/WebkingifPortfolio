@@ -147,7 +147,7 @@ export default function Projects() {
                         href={project.demoLink}
                         target="_blank"
                         rel="noreferrer"
-                        className="p-3 bg-cleanWhite text-primaryDark rounded-xl hover:bg-accentBlue hover:text-cleanWhite transition-all shadow-md transform translate-y-3 group-hover:translate-y-0 transition-transform duration-300"
+                        className="p-3 bg-cleanWhite text-primaryDark rounded-xl hover:bg-accentBlue hover:text-cleanWhite transition-all shadow-md transform translate-y-3 group-hover:translate-y-0  duration-300"
                         title="Open Live Demo"
                       >
                         <ExternalLink className="h-5 w-5" />
@@ -157,7 +157,7 @@ export default function Projects() {
                         href={project.githubLink}
                         target="_blank"
                         rel="noreferrer"
-                        className="p-3 bg-cleanWhite text-primaryDark rounded-xl hover:bg-accentBlue hover:text-cleanWhite transition-all shadow-md transform translate-y-3 group-hover:translate-y-0 transition-transform duration-300 delay-75"
+                        className="p-3 bg-cleanWhite text-primaryDark rounded-xl hover:bg-accentBlue hover:text-cleanWhite transition-all shadow-md transform translate-y-3 group-hover:translate-y-0 duration-300 delay-75"
                         title="View GitHub Repository"
                       >
                         <Github className="h-5 w-5" />
