@@ -2,15 +2,25 @@ import React from "react";
 import { ArrowRight, Download, Terminal, Code, Cpu, Palette, GitBranch, Layers, Flame } from "lucide-react";
 import Reveal from "./Reveal";
 
-export default function Hero() {
-  const skills = [
-    { name: "React", icon: Cpu, color: "text-sky-500", bg: "bg-sky-50 dark:bg-sky-950/30" },
-    { name: "TypeScript", icon: Code, color: "text-blue-600 dark:text-blue-400", bg: "bg-blue-50 dark:bg-blue-950/30" },
-    { name: "Tailwind CSS", icon: Palette, color: "text-teal-500", bg: "bg-teal-50 dark:bg-teal-950/30" },
-    { name: "Next.js", icon: Layers, color: "text-black dark:text-white", bg: "bg-zinc-100 dark:bg-zinc-800/50" },
-    { name: "Git & GitHub", icon: GitBranch, color: "text-orange-600 dark:text-orange-400", bg: "bg-orange-50 dark:bg-orange-950/30" },
-    { name: "Performance", icon: Flame, color: "text-amber-500", bg: "bg-amber-50 dark:bg-amber-950/30" },
-  ];
+
+async function getSkills() {
+  const response = await fetch(
+    "https://webkingif.github.io/WebkingifPortfolioAsset/data/skills.json"
+  )
+  const data: { name: string }[] = await response.json();
+  return data;
+}
+
+export default async function Hero() {
+  // const skills = [
+  //   { name: "React", icon: Cpu, color: "text-sky-500", bg: "bg-sky-50 dark:bg-sky-950/30" },
+  //   { name: "TypeScript", icon: Code, color: "text-blue-600 dark:text-blue-400", bg: "bg-blue-50 dark:bg-blue-950/30" },
+  //   { name: "Tailwind CSS", icon: Palette, color: "text-teal-500", bg: "bg-teal-50 dark:bg-teal-950/30" },
+  //   { name: "Next.js", icon: Layers, color: "text-black dark:text-white", bg: "bg-zinc-100 dark:bg-zinc-800/50" },
+  //   { name: "Git & GitHub", icon: GitBranch, color: "text-orange-600 dark:text-orange-400", bg: "bg-orange-50 dark:bg-orange-950/30" },
+  //   { name: "Performance", icon: Flame, color: "text-amber-500", bg: "bg-amber-50 dark:bg-amber-950/30" },
+  // ];
+  const skills = await getSkills();
 
   // Code editor lines simulation for the interactive visual card
   const codeSnippet = [
@@ -100,16 +110,12 @@ export default function Hero() {
                 </h2>
                 <div className="flex flex-wrap gap-2.5">
                   {skills.map((skill) => {
-                    const IconComponent = skill.icon;
                     return (
                       <div
                         id={`hero-skill-badge-${skill.name.toLowerCase().replace(/\s+/g, "-")}`}
                         key={skill.name}
                         className="inline-flex items-center gap-1.5 bg-cleanWhite dark:bg-[#1E293B] border border-gray-200 dark:border-slate-805 rounded-xl px-3 py-1.5 shadow-sm hover:border-accentBlue/30 hover:shadow dark:hover:border-accentBlue/40 transition-all duration-200"
                       >
-                        <div className={`p-1 rounded-lg ${skill.bg}`}>
-                          <IconComponent className={`h-3.5 w-3.5 ${skill.color}`} />
-                        </div>
                         <span className="font-sans font-semibold text-xs text-primaryDark dark:text-[#F1F5F9]">{skill.name}</span>
                       </div>
                     );
