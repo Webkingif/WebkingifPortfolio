@@ -91,7 +91,7 @@ export default function Navigation({ onNavClick, activeSection = "home" }: Navig
         <div className="flex items-center justify-between">
 
           {/* Logo Section */}
-          <div className="flex-shrink-0 flex items-center">
+          <div className="shrink-0 flex items-center">
             <a
               id="nav-logo-link"
               href="#home"
@@ -145,7 +145,7 @@ export default function Navigation({ onNavClick, activeSection = "home" }: Navig
                   {isActive && (
                     <motion.div
                       layoutId="activeNavIndicator"
-                      className="absolute bottom-0 left-0 right-0 h-[2px] bg-accentBlue rounded-full"
+                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-accentBlue rounded-full"
                       transition={{ type: "spring", stiffness: 380, damping: 30 }}
                     />
                   )}
