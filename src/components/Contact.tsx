@@ -1,6 +1,9 @@
 import React, { useState } from "react";
-import { Mail, MapPin, Linkedin, Github, Twitter, Send, CheckCircle2, Phone } from "lucide-react";
+import { Mail, MapPin, Send, CheckCircle2, Phone } from "lucide-react";
 import Reveal from "./Reveal";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import { IconType } from "react-icons";
 
 // Placeholder for your Web3Forms Access Key
 // REMINDER: Make sure to replace this with your actual Web3Forms Access Key from https://web3forms.com
@@ -69,26 +72,31 @@ export default function Contact() {
     setFormData((prev) => ({ ...prev, [fieldName]: value }));
   };
 
-  const socialLinks = [
-    {
-      name: "GitHub",
-      href: "https://github.com/webkingif",
-      icon: Github,
-      label: "webkingif on GitHub",
-    },
-    {
-      name: "LinkedIn",
-      href: "https://linkedin.com/in/femi-idowu-3472ab324",
-      icon: Linkedin,
-      label: "Idowu Oluwafemi Femi on LinkedIn",
-    },
-    {
-      name: "Twitter / X",
-      href: "https://x.com/Webkingif",
-      icon: Twitter,
-      label: "webkingif on Twitter / X",
-    },
-  ];
+  const socialLinks: {
+    name: string;
+    href: string;
+    icon: IconType;
+    label: string;
+  }[] = [
+      {
+        name: "GitHub",
+        href: "https://github.com/webkingif",
+        icon: FaGithub,
+        label: "webkingif on GitHub",
+      },
+      {
+        name: "LinkedIn",
+        href: "https://linkedin.com/in/femi-idowu-3472ab324",
+        icon: FaLinkedin,
+        label: "Idowu Oluwafemi Femi on LinkedIn",
+      },
+      {
+        name: "Twitter / X",
+        href: "https://x.com/Webkingif",
+        icon: FaXTwitter,
+        label: "webkingif on Twitter / X",
+      },
+    ];
 
   return (
     <section
@@ -185,7 +193,7 @@ export default function Contact() {
                           aria-label={social.label}
                           className="h-11 w-11 rounded-xl bg-neutralLight dark:bg-[#1E293B] border border-gray-150 dark:border-slate-800 flex items-center justify-center text-mutedGray dark:text-gray-400 hover:text-cleanWhite hover:bg-accentBlue hover:border-accentBlue active:scale-95 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-accentBlue/40 cursor-pointer"
                         >
-                          <IconComponent className="h-5 w-5" />
+                          <IconComponent className="h-5 w-5" {...({} as any)} />
                         </a>
                       );
                     })}

@@ -1,5 +1,5 @@
 import React from "react";
-import { ArrowRight, Download, Terminal, Code, Cpu, Palette, GitBranch, Layers, Flame } from "lucide-react";
+import { ArrowRight, Download, Terminal, Code, Cpu, GitBranch, Layers } from "lucide-react";
 import Reveal from "./Reveal";
 
 
@@ -10,17 +10,9 @@ async function getSkills() {
   const data: { name: string }[] = await response.json();
   return data;
 }
+const skills = await getSkills();
 
-export default async function Hero() {
-  // const skills = [
-  //   { name: "React", icon: Cpu, color: "text-sky-500", bg: "bg-sky-50 dark:bg-sky-950/30" },
-  //   { name: "TypeScript", icon: Code, color: "text-blue-600 dark:text-blue-400", bg: "bg-blue-50 dark:bg-blue-950/30" },
-  //   { name: "Tailwind CSS", icon: Palette, color: "text-teal-500", bg: "bg-teal-50 dark:bg-teal-950/30" },
-  //   { name: "Next.js", icon: Layers, color: "text-black dark:text-white", bg: "bg-zinc-100 dark:bg-zinc-800/50" },
-  //   { name: "Git & GitHub", icon: GitBranch, color: "text-orange-600 dark:text-orange-400", bg: "bg-orange-50 dark:bg-orange-950/30" },
-  //   { name: "Performance", icon: Flame, color: "text-amber-500", bg: "bg-amber-50 dark:bg-amber-950/30" },
-  // ];
-  const skills = await getSkills();
+export default function Hero() {
 
   // Code editor lines simulation for the interactive visual card
   const codeSnippet = [
@@ -127,83 +119,10 @@ export default async function Hero() {
         </div>
 
         {/* Right Column: Visual elegant representation / Modern IDE Mockup */}
+
         <div className="lg:col-span-6 flex justify-center w-full">
-          <Reveal delay={0.25}>
-            <div className="relative w-full max-w-lg aspect-auto">
-
-              {/* Visual background ambient glowing decoration */}
-              <div className="absolute -top-10 -left-10 w-44 h-44 bg-accentBlue/10 rounded-full filter blur-3xl opacity-70 -z-10 animate-pulse"></div>
-              <div className="absolute -bottom-10 -right-10 w-44 h-44 bg-blue-400/10 rounded-full filter blur-3xl opacity-60 -z-10"></div>
-
-              {/* Simulated Desktop window with active codes */}
-              <div className="w-full rounded-2xl bg-[#0B0F13] border border-gray-800 shadow-2xl overflow-hidden font-mono text-xs text-gray-400">
-
-                {/* Card top OS Bar */}
-                <div className="flex items-center justify-between bg-[#11161B] px-4 py-3 border-b border-gray-850">
-                  <div className="flex items-center gap-1.5">
-                    <span className="w-3 h-3 rounded-full bg-red-500/80"></span>
-                    <span className="w-3 h-3 rounded-full bg-yellow-500/80"></span>
-                    <span className="w-3 h-3 rounded-full bg-green-500/80"></span>
-                  </div>
-                  <div className="font-sans font-medium text-xs text-mutedGray">
-                    src/components/WebkingifApp.tsx
-                  </div>
-                  <div className="h-4 w-4"></div>
-                </div>
-
-                {/* Card sidebar panel mockup & Active editor */}
-                <div className="flex min-h-75">
-                  {/* Visual directory tree view (collapsed) */}
-                  <div className="hidden sm:flex flex-col gap-2.5 bg-[#090C0F] w-12 border-r border-gray-850 py-4 items-center text-gray-650">
-                    <Code className="h-4 w-4 text-accentBlue" />
-                    <Layers className="h-4 w-4 hover:text-gray-400 transition-colors" />
-                    <Cpu className="h-4 w-4 hover:text-gray-400 transition-colors" />
-                    <GitBranch className="h-4 w-4 hover:text-gray-400 transition-colors" />
-                  </div>
-
-                  {/* Main Code block */}
-                  <div className="flex-1 p-5 overflow-x-auto text-left leading-relaxed">
-                    {codeSnippet.map((code) => (
-                      <div key={code.line} className="flex gap-4">
-                        <span className="text-gray-600 w-4 select-none text-right">{code.line}</span>
-                        <pre className={`${code.color} whitespace-pre`}>{code.text}</pre>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Status footer inside card */}
-                <div className="bg-[#090C0F] border-t border-gray-850 px-4 py-2 flex justify-between items-center text-[10px] text-gray-500 font-sans">
-                  <div className="flex items-center gap-2">
-                    <span className="h-1.5 w-1.5 bg-green-500 rounded-full"></span>
-                    <span>ESLint: Passing</span>
-                  </div>
-                  <div>UTF-8 &bull; React v19</div>
-                </div>
-
-              </div>
-
-              {/* Dynamic decorative hover preview tag label */}
-              <div className="absolute -bottom-4 -left-3 bg-cleanWhite dark:bg-[#1E293B] border border-gray-150 dark:border-slate-800 rounded-xl px-4.5 py-2.5 shadow-md flex items-center gap-2.5 transform -rotate-1 hover:rotate-0 transition-transform duration-200">
-                <div className="h-7 w-7 bg-green-100 dark:bg-green-950/40 rounded-lg flex items-center justify-center text-green-600 dark:text-green-400 font-mono text-xs font-bold">
-                  99
-                </div>
-                <div className="font-sans">
-                  <div className="text-[10px] uppercase font-bold text-mutedGray dark:text-gray-450 leading-none">Speed Index</div>
-                  <div className="text-xs font-extrabold text-primaryDark dark:text-cleanWhite">Perfect core score</div>
-                </div>
-              </div>
-
-              {/* Mobile layout badge decoration */}
-              <div className="absolute -top-4 -right-3 bg-cleanWhite dark:bg-[#1E293B] border border-gray-150 dark:border-slate-800 rounded-xl px-4 py-2 shadow-md flex items-center gap-2 transform rotate-2 hover:rotate-0 transition-transform duration-200">
-                <span className="text-accentBlue text-xs">🚀</span>
-                <span className="font-sans font-bold text-xs text-primaryDark dark:text-cleanWhite">Responsive</span>
-              </div>
-
-            </div>
-          </Reveal>
+          <img src="/profile Idowu.png" alt="Idowu Femi's image" />
         </div>
-
       </div>
     </section>
   );

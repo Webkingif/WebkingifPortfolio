@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { ExternalLink, Github, Monitor, Smartphone, Database, Lock, Globe, Sparkles } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import Reveal from "./Reveal";
+import { FaGithub } from "react-icons/fa6";
 
 export interface Project {
   idno: number;
@@ -26,63 +27,6 @@ async function getProjects(): Promise<Project[]> {
 }
 const PROJECTS_DATA = await getProjects();
 
-const PROJECTS_DATA2 = [
-  {
-    id: "Coffee website",
-    title: "Coffee sales website",
-    description: "A website that advertises the products of a coffebrand.",
-    image: "/coffee.jpg",
-    demoLink: "https://webkingif.github.io/CoffeeWebsite",
-    githubLink: "https://github.com/Webkingif/CoffeeWebsite",
-    tags: ["HTML", "CSS", "Javascript"],
-    category: "Frontend",
-    featured: true,
-  },
-  {
-    id: "Habit-Tracker",
-    title: "Habit tracker",
-    description: "A habit tracker crated with Next.js. It is a tool that can be used to track streaks.",
-    image: "/habitTracker.jpg",
-    demoLink: "https://idowuhabittracker.netlify.app",
-    githubLink: "https://github.com/webkingif/Habit-Tracker",
-    tags: ["CSS", "Next.js", "HTML", "Typescript", "React"],
-    category: "Frontend",
-    featured: true,
-  },
-  {
-    id: "Kindergarten-School-website",
-    title: "Website for a school for Kindergatens",
-    description: "A fun, interactive, and kid-friendly web application built using HTML, CSS, and JavaScript. This project was designed with children in mind — simple interface, bright visuals, and easy interaction.",
-    image: "/kindergaten.jpg",
-    demoLink: "https://webkingif.github.io/Kindergarten-School-website",
-    githubLink: "https://github.com/Webkingif/Kindergarten-School-website",
-    tags: ["HTML", "CSS", "Javascript"],
-    category: "Frontend",
-    featured: false,
-  },
-  {
-    id: "Highly responsive Landing page",
-    title: "Cocoa claus chocolate",
-    description: "A single page website built using pure HTML, CSS and Javascript. This site contains custom animations and sections designed to trigger cravings.",
-    image: "/cocoaclaus.jpg",
-    demoLink: "https://webkingif.github.io/Cocoa-claus-chocolate",
-    githubLink: "https://github.com/Webkingif/Cocoa-claus-chocolate",
-    tags: ["HTML", "CSS", "Javascript"],
-    category: "Frontend",
-    featured: false,
-  },
-  {
-    id: "Chess",
-    title: "Grandmaster Chess",
-    description: "Grandmaster AI Chess is a high-performance, fully accessible chess game powered entirely by a client side Javascript engine. Designed as a modern Progressive Web app (PWA), it features intelligent AI difficulties utilizing minimax and alpha-beta pruning algorithms. With advanced service worker caching, the entire platform installs instantly to mobile or desktop devices and operates beautifully offline - delivering console-speed responses without an active internet connection.",
-    image: "/chess2026.jpg",
-    demoLink: "https://webkingif.github.io/chess-game-2026",
-    githubLink: "https://github.com/Webkingif/chess-game-2026",
-    tags: ["HTML", "CSS", "Javascript"],
-    category: "Frontend",
-    featured: true,
-  }
-];
 
 export function Description({ text }) {
   const [expanded, setExpanded] = useState(false);
@@ -160,7 +104,7 @@ export default function Projects() {
                         className="p-3 bg-cleanWhite text-primaryDark rounded-xl hover:bg-accentBlue hover:text-cleanWhite transition-all shadow-md transform translate-y-3 group-hover:translate-y-0 duration-300 delay-75"
                         title="View GitHub Repository"
                       >
-                        <Github className="h-5 w-5" />
+                        <FaGithub className="h-5 w-5" {...({} as any)} />
                       </a>
                     </div>
                   </div>
@@ -211,7 +155,7 @@ export default function Projects() {
                         rel="noreferrer"
                         className="inline-flex items-center gap-1.5 font-semibold text-mutedGray hover:text-primaryDark dark:text-gray-405 dark:hover:text-cleanWhite transition-colors"
                       >
-                        <Github className="h-4.5 w-4.5" />
+                        <FaGithub className="h-5 w-5" {...({} as any)} />
                         <span>Repository</span>
                       </a>
                     </div>

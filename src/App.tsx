@@ -5,7 +5,7 @@ import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Reveal from "./components/Reveal";
-import { ArrowRight, Code, Sparkles, FolderGit2 } from "lucide-react";
+import { Code, Sparkles, FolderGit2 } from "lucide-react";
 
 export default function App() {
   const [activeSection, setActiveSection] = useState("home");
@@ -69,7 +69,7 @@ export default function App() {
           className="py-24 bg-cleanWhite dark:bg-[#0F172A] border-y border-gray-100 dark:border-slate-805 scroll-mt-20 transition-colors duration-300"
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            
+
             {/* About Head Section wrapped in Reveal */}
             <Reveal>
               <div className="text-center max-w-2xl mx-auto space-y-4">
@@ -85,7 +85,7 @@ export default function App() {
 
             {/* Core Values Cards wrapped with staggered reveal times */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
-              
+
               {/* Card 1 */}
               <Reveal delay={0.1}>
                 <div className="bg-neutralLight dark:bg-[#1E293B] p-8 rounded-2xl border border-gray-100/80 dark:border-slate-800 hover:shadow-md transition-all duration-300 group h-full">
