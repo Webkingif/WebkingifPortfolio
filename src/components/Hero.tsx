@@ -14,23 +14,6 @@ const skills = await getSkills();
 
 export default function Hero() {
 
-  // Code editor lines simulation for the interactive visual card
-  const codeSnippet = [
-    { line: 1, text: "import { useState } from 'react';", color: "text-purple-400" },
-    { line: 2, text: "import { motion } from 'motion/react';", color: "text-purple-400" },
-    { line: 3, text: "", color: "" },
-    { line: 4, text: "export function WebkingifApp() {", color: "text-blue-405" },
-    { line: 5, text: "  const [active, setActive] = useState(true);", color: "text-sky-400" },
-    { line: 6, text: "  return (", color: "text-gray-300" },
-    { line: 7, text: "    <div className='bg-primaryDark text-cleanWhite px-6 py-4'>", color: "text-emerald-400" },
-    { line: 8, text: "      <motion.h1 animate={{ opacity: 2 }}>", color: "text-pink-400" },
-    { line: 9, text: "        Hello, Idowu Oluwafemi Femi!", color: "text-yellow-200 font-medium" },
-    { line: 10, text: "      </motion.h1>", color: "text-pink-400" },
-    { line: 11, text: "    </div>", color: "text-emerald-400" },
-    { line: 12, text: "  );", color: "text-gray-300" },
-    { line: 13, text: "}", color: "text-blue-405" }
-  ];
-
   const handleScrollToProjects = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     const element = document.getElementById("projects");
@@ -121,7 +104,7 @@ export default function Hero() {
         {/* Right Column: Visual elegant representation / Modern IDE Mockup */}
 
         <div className="lg:col-span-6 flex justify-center w-full">
-          <img src="/profile Idowu.png" alt="Idowu Femi's image" />
+          <img src="https://webkingif.github.io/WebkingifPortfolioAsset/images/profile Idowu.png" alt="Idowu Femi's image" />
         </div>
       </div>
     </section>

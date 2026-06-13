@@ -62,21 +62,23 @@ export default function Navigation({ onNavClick, activeSection = "home" }: Navig
   const handleLinkClick = (id: string, e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     setIsOpen(false);
-
-    if (onNavClick) {
-      onNavClick(id);
-    } else {
-      const element = document.getElementById(id);
-      if (element) {
-        const headerOffset = 90;
-        const elementPosition = element.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.scrollY - headerOffset;
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: "smooth"
-        });
+    setTimeout(() => {
+      if (onNavClick) {
+        onNavClick(id);
+      } else {
+        const element = document.getElementById(id);
+        if (element) {
+          const headerOffset = 90;
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.scrollY - headerOffset;
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+          });
+        }
       }
-    }
+    }, 150)
+
   };
 
   return (
