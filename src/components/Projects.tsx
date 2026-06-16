@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { ExternalLink } from "lucide-react";
 import Reveal from "./Reveal";
 import { FaGithub } from "react-icons/fa6";
@@ -25,7 +25,10 @@ async function getProjects(): Promise<Project[]> {
 
   return data;
 }
-const PROJECTS_DATA = await getProjects();
+
+
+
+
 
 
 export function Description({ text }) {
@@ -48,6 +51,14 @@ export function Description({ text }) {
 }
 
 export default function Projects() {
+  const [projects, setProjects] = useState<Project[]>([]);
+  useEffect(() => {
+    const loadProjects = async () => {
+      const data = await getProjects();
+      setProjects(data);
+    }
+    loadProjects();
+  }, [])
 
   return (
     <section
@@ -71,7 +82,7 @@ export default function Projects() {
 
         {/* Responsive Layout Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {PROJECTS_DATA.map((project, index) => (
+          {projects.map((project, index) => (
             <div key={project.id} className="h-full">
               <Reveal delay={index * 0.15}>
                 <article

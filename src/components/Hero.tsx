@@ -1,6 +1,7 @@
 import React from "react";
 import { ArrowRight, Download, Terminal, Code, Cpu, GitBranch, Layers } from "lucide-react";
 import Reveal from "./Reveal";
+import { useEffect, useState } from "react";
 
 
 async function getSkills() {
@@ -10,10 +11,22 @@ async function getSkills() {
   const data: { name: string }[] = await response.json();
   return data;
 }
-const skills = await getSkills();
+
+
+
 
 export default function Hero() {
 
+  const [skills, setSkills] = useState<{ name: string }[]>([])
+
+
+  useEffect(() => {
+    const loadSkills = async () => {
+      const data = await getSkills();
+      setSkills(data)
+    }
+    loadSkills()
+  }, [])
   const handleScrollToProjects = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     const element = document.getElementById("projects");
