@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://webkingif.netlify.app/sitemap.xml
