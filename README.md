@@ -63,5 +63,5 @@ This portfolio includes:
 Feel free to reach out:
 
 - Email: webkingif@gmail.com
-- LinkedIn: https://linkedin.com/in/femi-idowu-3472ab324
+- LinkedIn: https://linkedin.com/in/oluwafemi-idowu-ayomide
 - GitHub: https://github.com/Webkingif
