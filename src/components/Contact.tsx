@@ -86,7 +86,7 @@ export default function Contact() {
       },
       {
         name: "LinkedIn",
-        href: "https://linkedin.com/in/femi-idowu-3472ab324",
+        href: "https://linkedin.com/in/oluwafemi-idowu-ayomide",
         icon: FaLinkedin,
         label: "Idowu Oluwafemi Femi on LinkedIn",
       },
