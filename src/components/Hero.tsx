@@ -57,7 +57,7 @@ export default function Hero() {
 
               {/* Intro paragraph with clean color and metrics weight */}
               <p className="max-w-xl text-base sm:text-lg text-mutedGray dark:text-gray-400 leading-relaxed font-sans">
-                I'm a <strong className="text-primaryDark dark:text-cleanWhite font-semibold">Frontend developer</strong> with <strong className="text-primaryDark dark:text-cleanWhite font-semibold"> 4+ years </strong> of experience. I love building inclusive and accessible web experiences that delight users.
+                I'm a <strong className="text-primaryDark dark:text-cleanWhite font-semibold">Full Stack Software Engineer</strong> with <strong className="text-primaryDark dark:text-cleanWhite font-semibold"> 4+ years </strong> of experience. I love building inclusive and accessible web experiences that delight users.
               </p>
 
               {/* CTAs */}
