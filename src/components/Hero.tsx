@@ -46,26 +46,18 @@ export default function Hero() {
         <div className="lg:col-span-6 flex flex-col items-start text-left">
           <Reveal delay={0}>
             <div className="space-y-6 sm:space-y-8 flex flex-col items-start">
-              {/* Sub-badge indicating availability status */}
-              <div className="inline-flex items-center gap-2.5 bg-accentBlue/8 text-accentBlue dark:text-[#38BDF8] px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider font-sans border border-accentBlue/5 dark:border-[#38BDF8]/10">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#0077D3] opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#0077D3]"></span>
-                </span>
-                Available for Freelance & Full-time
-              </div>
 
               {/* Heading with Brand color mapping */}
               <h1 className="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-primaryDark dark:text-cleanWhite leading-[1.1]">
-                Crafting High-Performance <span className="text-accentBlue relative">
-                  User Interfaces
+                Nice to meet you! I'm <span className="text-accentBlue relative">
+                  Idowu Femi
                   <span className="absolute bottom-1 left-0 w-full h-1.5 bg-accentBlue/10 -z-10 rounded-full"></span>
                 </span>
               </h1>
 
               {/* Intro paragraph with clean color and metrics weight */}
               <p className="max-w-xl text-base sm:text-lg text-mutedGray dark:text-gray-400 leading-relaxed font-sans">
-                Hi, I'm <strong className="text-primaryDark dark:text-cleanWhite font-semibold">Idowu Femi</strong>. As a frontend developer, I bridge the gap between clean code and exceptional user experiences.
+                I'm a <strong className="text-primaryDark dark:text-cleanWhite font-semibold">Frontend developer</strong> with <strong className="text-primaryDark dark:text-cleanWhite font-semibold"> 4+ years </strong> of experience. I love building inclusive and accessible web experiences that delight users.
               </p>
 
               {/* CTAs */}
